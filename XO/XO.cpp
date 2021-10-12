@@ -126,7 +126,11 @@ void check() {
 }
 int main()
 {
-	
+	for (int i = 0; i < 9; i++)
+	{
+		number[i] = 0;
+		end = 1;
+	}
 	srand(time(NULL));
 	if (rand()%2)
 	{
@@ -172,7 +176,22 @@ int main()
 		}
 		
 		scanf_s("%d", &cache);
-		number[cache-1] = turn;
+		if ((number[cache - 1] == 0))
+		{
+			number[cache - 1] = turn;
+		}
+		else {
+			while (number[cache - 1] != 0) {
+				printf("ENTER BLOCK NUMBER Again!!\n");
+				scanf_s("%d", &cache);
+				if ((number[cache - 1] == 0))
+				{
+					number[cache - 1] = turn;
+					break;
+				}
+
+			}
+		}
 		
 	}
 	
